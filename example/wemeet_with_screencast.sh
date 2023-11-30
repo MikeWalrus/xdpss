@@ -1,5 +1,10 @@
 #!/usr/bin/bash
 
+stream-pw-node() {
+    local pw_node="$1"
+    GST_DEBUG=3 gst-launch-1.0 pipewiresrc path="$pw_node" ! videoconvert ! autovideosink
+}
+
 launch() {
     unset WAYLAND_DISPLAY
     export DISPLAY="$xwayland_display"
@@ -13,7 +18,7 @@ launch() {
     sleep 0.5
     picom &
     sleep 0.5
-    stream-pw-node.sh "$pw_node" &
+    stream-pw-node "$pw_node" &
     wemeet-x11 &
 }
 
