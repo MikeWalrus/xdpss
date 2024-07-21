@@ -6,6 +6,7 @@ import dbus.mainloop.glib
 from gi.repository import GLib
 
 import sys
+import time
 
 
 def eprint(*args, **kwargs):
@@ -107,6 +108,7 @@ def main():
     try:
         loop.run()
     except KeyboardInterrupt:
+        time.sleep(1)
         screen_cast.close()
         loop.quit()
 
