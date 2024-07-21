@@ -15,6 +15,10 @@ dependencies = [
     "dbus-python >= 1.0",
     "PyGObject >= 3.46.0"
 ]
+license = { text = "GPL-3.0-only" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+]
 
 [project.scripts]
 xdpss = "xdpss:main"
